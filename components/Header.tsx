@@ -4,21 +4,6 @@ import { memo, useState } from "react";
 import { Container } from "../styles/Header.styles";
 
 const Header = () => {
-  /*   if (message === "Login successful!") {
-    setTimeout(() => {
-      navigate("/bookspage");
-    }, 2000);
-  }
- */
-
-  /*   const updatedTime = () =>{
-    setTimeout(() => {
-      return  new Date().toString()
-     
-    }, 1000) as any
-  }
- */
-
   const [time, setTime] = useState<string>(new Date().toString());
 
   function displayTime() {
