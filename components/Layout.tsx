@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
@@ -5,6 +6,7 @@ const Layout = ({ children }: React.PropsWithChildren<{}>) => {
     <>
       <Header />
       <div>{children}</div>
+      <Footer />
     </>
   );
 };
