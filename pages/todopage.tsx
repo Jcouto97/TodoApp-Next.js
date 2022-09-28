@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import { CompletedContext } from '../Contexts/CompletedContext'
 
 const ToDoPage: NextPage = () => {
@@ -89,4 +89,4 @@ const ToDoPage: NextPage = () => {
   );
 };
 
-export default ToDoPage;
+export default memo(ToDoPage);

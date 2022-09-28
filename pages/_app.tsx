@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import Head from "next/head"; //para meta info
 import Layout from "../components/Layout";
 import { CompletedContext } from "../Contexts/CompletedContext";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [completed, setCompleted] = useState<string[]>([]); //DAR CLEAR
@@ -23,4 +23,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default memo(MyApp);

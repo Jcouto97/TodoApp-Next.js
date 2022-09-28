@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { memo } from "react";
 import { Container } from "../styles/Header.styles";
 
 const Header: NextPage = () => {
@@ -10,4 +11,4 @@ const Header: NextPage = () => {
   )
 };
 
-export default Header;
+export default memo(Header);

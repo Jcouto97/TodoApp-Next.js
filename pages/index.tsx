@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import { memo } from "react";
 
 const Home: NextPage = () => {
   return (
@@ -14,4 +15,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default memo(Home);
