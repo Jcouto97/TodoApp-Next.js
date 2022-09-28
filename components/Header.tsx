@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import { Container } from "../styles/Header";
 
 const Header: NextPage = () => {
-  return <div>TODO LIST, hora local</div>;
+  return <Container>TODO LIST, hora local</Container>;
 };
 
 export default Header;
