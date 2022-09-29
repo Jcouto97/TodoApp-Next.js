@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 import { memo, useState } from "react";
-import { Container } from "../styles/Header.styles";
+import { Container, Title, Time } from "../styles/Header.styles";
+import check from "../assets/check.png";
+import Image from "next/image";
 
 const Header = () => {
   const [time, setTime] = useState<string>(new Date().toString());
@@ -18,8 +19,12 @@ const Header = () => {
     <>
       <Link href="/">
         <Container>
-          <h1>TODO LIST</h1>
-          <p>{time}</p>
+          <Title>
+            TOD
+            <Image src={check} width={30} height={30} alt="check icon" /> &nbsp;
+            LIST
+          </Title>
+          <Time>{time}</Time>
         </Container>
       </Link>
     </>

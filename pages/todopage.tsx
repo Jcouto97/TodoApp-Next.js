@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { memo, useContext, useState } from "react";
-import { CompletedContext } from '../Contexts/CompletedContext'
+import { CompletedContext } from "../Contexts/CompletedContext";
 
 const ToDoPage: NextPage = () => {
-    const { completed, setCompleted } = useContext(CompletedContext);
+  const { completed, setCompleted } = useContext(CompletedContext);
 
   const [input, setInput] = useState<string>("");
   const [todoList, setTodoList] = useState<string[]>([]);
- 
 
   const handleChange = (e: any) => {
     //debugger;
@@ -42,17 +41,27 @@ const ToDoPage: NextPage = () => {
     );
     setTodoList(updatedList);
     const dateAndTime = new Date().toString();
-    
+
     //nulish concealing, se tiver vazio tem lenght a mesma
-    setCompleted([...(completed ?? []), chore + " completed at " + dateAndTime]);
-    
+    setCompleted([
+      ...(completed ?? []),
+      chore + " completed at " + dateAndTime,
+    ]);
   };
 
   return (
     <>
       <div>todo Page</div>
-      <input type="text" value={input} onChange={handleChange} />
-      <button onClick={handleSubmit}>Submit</button>
+      <input
+        type="text"
+        value={input}
+        onChange={handleChange}
+        onKeyUp={(key) => {
+          if (key.code === "Enter") {
+            handleSubmit(event);
+          }
+        }}
+      />
       <ol>
         {todoList.length >= 1
           ? todoList.map((chore, index) => {
@@ -81,10 +90,9 @@ const ToDoPage: NextPage = () => {
           : "Enter a chore on your todo list :)"}
       </ol>
 
-        <Link href="/completed">
-          <button>Click here to go to completed page</button>
-        </Link>
-  
+      <Link href="/completed">
+        <button>Click here to go to completed page</button>
+      </Link>
     </>
   );
 };

@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
 import { memo } from "react";
-import { Container } from "../styles/Footer.styles";
+import { Container, Text } from "../styles/Footer.styles";
 
 const Footer: NextPage = () => {
-  return <Container>What a footer wowowow</Container>;
+  return (
+    <Container>
+      <Text>© TodoApp 2022</Text>
+    </Container>
+  );
 };
 
 export default memo(Footer);
