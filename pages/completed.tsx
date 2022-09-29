@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { memo, useContext } from "react";
 import { CompletedContext } from "../Contexts/CompletedContext";
+import { Button } from "../styles/Button.styles";
 
 const Completed: NextPage = () => {
   const { completed, setCompleted } = useContext(CompletedContext);
@@ -26,7 +27,7 @@ const Completed: NextPage = () => {
       </div>
       <button onClick={handleClear}>Click here to Clear Completed List</button>
       <Link href="/todopage">
-        <button>Click here to go back to todo list page</button>
+        <Button width={'10%'} >Go back to todo list</Button>
       </Link>
     </>
   );

@@ -10,12 +10,12 @@ import {
   Perks,
   Perk,
   MiniFooter,
-  Button,
   IndividualMiniFooter,
   ImageContainer,
 } from "../styles/Home.styles";
 import robot from "../assets/home.png";
 import vector from "../assets/vector.png";
+import { Button } from "../styles/Button.styles";
 
 const Home: NextPage = () => {
   return (

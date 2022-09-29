@@ -4,6 +4,9 @@ import { memo, useContext, useState } from "react";
 import { CompletedContext } from "../Contexts/CompletedContext";
 import { TodoContext } from "../Contexts/TodoContext";
 import Input from "../components/Input";
+import Chore from "../components/Chore";
+import { Button } from "../styles/Button.styles";
+import { Container, Title, ListContainer, Subtitle } from "../styles/ChoresPages";
 
 const ToDoPage: NextPage = () => {
   const { completed, setCompleted } = useContext(CompletedContext);
@@ -53,41 +56,37 @@ const ToDoPage: NextPage = () => {
   };
 
   return (
-    <>
-      <div>todo Page</div>
-      <Input input={input} setInput={setInput} handleChange= {handleChange} handleSubmit= {handleSubmit}/>
-      <ol>
-        {todoList.length >= 1
-          ? todoList.map((chore: string, index: number) => {
-              return (
-                <li key={index}>
-                  {chore}
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleDelete(chore);
-                    }}
-                  >
-                    delete
-                  </button>{" "}
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleCompleted(chore);
-                    }}
-                  >
-                    completed
-                  </button>
-                </li>
-              );
-            })
-          : "Enter a chore on your todo list :)"}
-      </ol>
-
-      <Link href="/completed">
-        <button>Click here to go to completed page</button>
-      </Link>
-    </>
+    <Container>
+      <Title>todo Page</Title>
+      <Input
+        input={input}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+      <ListContainer>
+        {todoList.length >= 1 ? (
+          todoList.map((chore: string, index: number) => {
+            return (
+              <Chore
+                key={index}
+                chore={chore}
+                handleDelete={handleDelete}
+                handleCompleted={handleCompleted}
+              />
+            );
+          })
+        ) : (
+          <Subtitle>Enter a chore on your todo list :)</Subtitle>
+        )}
+      </ListContainer>
+      {completed.length > 0 ? (
+        <Link href="/completed">
+          <Button width={'10%'} >Completed Chores Page</Button>
+        </Link>
+      ) : (
+        <></>
+      )}
+    </Container>
   );
 };
 
