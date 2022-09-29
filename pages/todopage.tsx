@@ -57,7 +57,7 @@ const ToDoPage: NextPage = () => {
 
   return (
     <Container>
-      <Title>todo Page</Title>
+      <Title>Todo List</Title>
       <Input
         input={input}
         handleChange={handleChange}
@@ -78,14 +78,14 @@ const ToDoPage: NextPage = () => {
         ) : (
           <Subtitle>Enter a chore on your todo list :)</Subtitle>
         )}
-      </ListContainer>
-      {completed.length > 0 ? (
+      {completed?.length > 0 ? (
         <Link href="/completed">
-          <Button width={'10%'} >Completed Chores Page</Button>
+          <Button width={'2'} margin={'0px 20px'}>Completed Chores</Button>
         </Link>
       ) : (
         <></>
       )}
+      </ListContainer>
     </Container>
   );
 };
