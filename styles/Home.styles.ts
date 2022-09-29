@@ -2,21 +2,25 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
   align-items: flex-end;
   justify-content: center;
-  gap: 8%;
-  margin-top: 3%;
+  gap: 5%;
   margin-right: 4%;
 `;
 
 export const TextContainer = styled.div`
   background-color: #f0fffb;
-  margin-bottom: 10%;
   border: 1px solid #44c9ab;
   padding: 2%;
   color: #5c605f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 10%;
 `;
+
+export const ImageContainer = styled.div`
+    margin-bottom: 10%;
+    border-bottom: 1px solid #21ab8c;
+`
 
 export const Title = styled.h1`
   font-size: 40px;

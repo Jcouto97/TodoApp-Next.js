@@ -2,12 +2,14 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { memo, useContext, useState } from "react";
 import { CompletedContext } from "../Contexts/CompletedContext";
+import { TodoContext } from "../Contexts/TodoContext";
+import Input from "../components/Input";
 
 const ToDoPage: NextPage = () => {
   const { completed, setCompleted } = useContext(CompletedContext);
+  const { todoList, setTodoList } = useContext(TodoContext);
 
   const [input, setInput] = useState<string>("");
-  const [todoList, setTodoList] = useState<string[]>([]);
 
   const handleChange = (e: any) => {
     //debugger;
@@ -19,10 +21,11 @@ const ToDoPage: NextPage = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
 
-    const dateAndTime = new Date().toString();
+    const dateAndTime: string =
+      new Date().toDateString() + " at " + new Date().toLocaleTimeString();
 
     //input + date para dar bind da date a cada chore
-    setTodoList([...todoList, input + " submitted at " + dateAndTime]);
+    setTodoList([...todoList, input + " submitted on " + dateAndTime]);
 
     //para dar reset ao input
     setInput("");
@@ -30,14 +33,14 @@ const ToDoPage: NextPage = () => {
 
   const handleDelete = (chore: string) => {
     const updatedList = todoList.filter(
-      (todo) => todoList.indexOf(todo) != todoList.indexOf(chore)
+      (todo: string) => todoList.indexOf(todo) != todoList.indexOf(chore)
     );
     setTodoList(updatedList);
   };
 
   const handleCompleted = (chore: string) => {
     const updatedList = todoList.filter(
-      (todo) => todoList.indexOf(todo) != todoList.indexOf(chore)
+      (todo: string) => todoList.indexOf(todo) != todoList.indexOf(chore)
     );
     setTodoList(updatedList);
     const dateAndTime = new Date().toString();
@@ -52,19 +55,10 @@ const ToDoPage: NextPage = () => {
   return (
     <>
       <div>todo Page</div>
-      <input
-        type="text"
-        value={input}
-        onChange={handleChange}
-        onKeyUp={(key) => {
-          if (key.code === "Enter") {
-            handleSubmit(event);
-          }
-        }}
-      />
+      <Input input={input} setInput={setInput} handleChange= {handleChange} handleSubmit= {handleSubmit}/>
       <ol>
         {todoList.length >= 1
-          ? todoList.map((chore, index) => {
+          ? todoList.map((chore: string, index: number) => {
               return (
                 <li key={index}>
                   {chore}

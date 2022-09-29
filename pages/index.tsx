@@ -12,6 +12,7 @@ import {
   MiniFooter,
   Button,
   IndividualMiniFooter,
+  ImageContainer,
 } from "../styles/Home.styles";
 import robot from "../assets/home.png";
 import vector from "../assets/vector.png";
@@ -19,7 +20,6 @@ import vector from "../assets/vector.png";
 const Home: NextPage = () => {
   return (
     <Container>
-      <Image src={robot} width={450} height={450} alt="home robot" />
       <TextContainer>
         <Title>TODO</Title>
         <Subtitle>A to-do list web app</Subtitle>
@@ -27,11 +27,11 @@ const Home: NextPage = () => {
         <Perks>
           <Perk>
             <Image src={vector} width={10} height={10} alt="vector icon" />
-            manage projects
+            &nbsp; manage projects
           </Perk>
           <Perk>
             <Image src={vector} width={10} height={10} alt="vector icon" />
-            add tasks
+            &nbsp; add tasks
           </Perk>
         </Perks>
         <MiniFooter>
@@ -42,6 +42,9 @@ const Home: NextPage = () => {
           <Button>Start Here</Button>
         </Link>
       </TextContainer>
+      <ImageContainer>
+        <Image src={robot} width={550} height={350} alt="home robot" />
+      </ImageContainer>
     </Container>
   );
 };
