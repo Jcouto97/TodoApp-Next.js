@@ -11,8 +11,10 @@ import {
   GoBack,
   BackText,
 } from "../styles/ChoresPages";
+import { ChoreText, ChoreContainer } from "../styles/Chore.styles";
 import Image from "next/image";
 import leftArrow from "./../assets/left-arrow.png";
+import checkCircle from "./../assets/checkCircle.png";
 
 const Completed: NextPage = () => {
   const { completed, setCompleted } = useContext(CompletedContext);
@@ -27,9 +29,22 @@ const Completed: NextPage = () => {
         <ListContainer>
           <Title>Completed chores</Title>
           {completed.map((chore: string, index: number) => {
-            return <p key={index}>{chore}</p>;
+            return (
+              <ChoreContainer key={index}>
+                <ChoreText>
+                  <Image
+                    width={15}
+                    height={15}
+                    src={checkCircle}
+                    alt="check circle"
+                  />{" "}
+                  &nbsp;
+                  {chore}
+                </ChoreText>
+              </ChoreContainer>
+            );
           })}
-          <Button onClick={handleClear} width={'2'} margin={'0px 20px'} >
+          <Button onClick={handleClear} width={"2"} margin={"0px 20px"}>
             Click here to Clear Completed List
           </Button>
         </ListContainer>
@@ -38,7 +53,7 @@ const Completed: NextPage = () => {
       )}
       <GoBack>
         <Link href="/todopage">
-          <Image src={leftArrow} alt="left-arrow" width={30} height={25}/>
+          <Image src={leftArrow} alt="left-arrow" width={30} height={25} />
         </Link>
         <BackText>Go Back To List</BackText>
       </GoBack>

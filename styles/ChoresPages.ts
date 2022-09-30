@@ -20,7 +20,9 @@ export const Title = styled.h1`
 export const ListContainer = styled.ol`
   display: flex;
   flex-direction: column;
+  gap: 15px;
   align-items: center;
+  margin-right: 8%;
 `;
 
 export const Subtitle = styled.h3`
@@ -31,7 +33,6 @@ export const Subtitle = styled.h3`
   background-color: white;
   padding: 7px;
   border-radius: 20px;
-  margin-right: 20px;
 `;
 
 export const GoBack = styled.div`

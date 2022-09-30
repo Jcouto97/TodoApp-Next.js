@@ -6,7 +6,12 @@ import { TodoContext } from "../Contexts/TodoContext";
 import Input from "../components/Input";
 import Chore from "../components/Chore";
 import { Button } from "../styles/Button.styles";
-import { Container, Title, ListContainer, Subtitle } from "../styles/ChoresPages";
+import {
+  Container,
+  Title,
+  ListContainer,
+  Subtitle,
+} from "../styles/ChoresPages";
 
 const ToDoPage: NextPage = () => {
   const { completed, setCompleted } = useContext(CompletedContext);
@@ -28,7 +33,7 @@ const ToDoPage: NextPage = () => {
       new Date().toDateString() + " at " + new Date().toLocaleTimeString();
 
     //input + date para dar bind da date a cada chore
-    setTodoList([...todoList, input + " submitted on " + dateAndTime]);
+    setTodoList([...todoList, input + " || submitted on " + dateAndTime]);
 
     //para dar reset ao input
     setInput("");
@@ -51,7 +56,7 @@ const ToDoPage: NextPage = () => {
     //nulish concealing, se tiver vazio tem lenght a mesma
     setCompleted([
       ...(completed ?? []),
-      chore + " completed at " + dateAndTime,
+      chore + " \r\n completed at " + dateAndTime,
     ]);
   };
 
@@ -78,13 +83,15 @@ const ToDoPage: NextPage = () => {
         ) : (
           <Subtitle>Enter a chore on your todo list :)</Subtitle>
         )}
-      {completed?.length > 0 ? (
-        <Link href="/completed">
-          <Button width={'2'} margin={'0px 20px'}>Completed Chores</Button>
-        </Link>
-      ) : (
-        <></>
-      )}
+        {completed?.length > 0 ? (
+          <Link href="/completed">
+            <Button width={"2"} margin={"0px 20px"}>
+              Completed Chores
+            </Button>
+          </Link>
+        ) : (
+          <></>
+        )}
       </ListContainer>
     </Container>
   );
