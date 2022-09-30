@@ -26,11 +26,11 @@ const Home: NextPage = () => {
 
         <Perks>
           <Perk>
-            <Image src={vector} width={10} height={10} alt="vector icon" />
+            <Image src={vector} width={15} height={15} alt="vector icon" />
             &nbsp; manage projects
           </Perk>
           <Perk>
-            <Image src={vector} width={10} height={10} alt="vector icon" />
+            <Image src={vector} width={15} height={15} alt="vector icon" />
             &nbsp; add tasks
           </Perk>
         </Perks>

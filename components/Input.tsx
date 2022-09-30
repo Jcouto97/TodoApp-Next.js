@@ -1,5 +1,6 @@
 import { IinputProps } from "../types";
 import { UserInput } from "../styles/Input.styles";
+import { memo } from "react";
 
 const Input = (props: IinputProps) => {
   const { input, handleChange, handleSubmit } = props;
@@ -20,4 +21,4 @@ const Input = (props: IinputProps) => {
   );
 };
 
-export default Input;
+export default memo(Input);

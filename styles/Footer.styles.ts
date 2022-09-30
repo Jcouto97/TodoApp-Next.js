@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #DDFFF7;
+  background-color: #ddfff7;
   position: absolute;
   left: 0;
   right: 0;
@@ -9,9 +9,9 @@ export const Container = styled.div`
   padding: 20px;
   display: flex;
   justify-content: center;
-  border-top: 1px solid #AFB5B3;
+  border-top: 1px solid #93dbca;
 `;
 
 export const Text = styled.p`
-color: #484A4A;
-`
+  color: #484a4a;
+`;

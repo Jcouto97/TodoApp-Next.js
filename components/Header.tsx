@@ -21,7 +21,7 @@ const Header = () => {
         <Container>
           <Title>
             TOD
-            <Image src={check} width={30} height={30} alt="check icon" /> &nbsp;
+            <Image src={check} width={36} height={39} alt="check icon" /> &nbsp;
             LIST
           </Title>
           <Time>{time}</Time>

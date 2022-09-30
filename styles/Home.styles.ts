@@ -18,12 +18,12 @@ export const TextContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-    margin-bottom: 10%;
-    border-bottom: 1px solid #21ab8c;
-`
+  margin-bottom: 10%;
+  border-bottom: 1px solid #21ab8c;
+`;
 
 export const Title = styled.h1`
-  font-size: 40px;
+  font-size: 33px;
   font-family: "Inria Serif", serif;
   color: #616766;
 `;
@@ -39,7 +39,10 @@ export const Perks = styled.div`
   font-size: 15px;
 `;
 
-export const Perk = styled.p``;
+export const Perk = styled.p`
+  display: flex;
+  align-items: center;
+`;
 
 export const MiniFooter = styled.div`
   display: flex;
@@ -50,4 +53,3 @@ export const IndividualMiniFooter = styled.p`
   border-bottom: 1px solid #44c9ab;
   font-family: "Inria Serif", serif;
 `;
-

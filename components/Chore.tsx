@@ -3,6 +3,7 @@ import trash from "./../assets/trash.png";
 import circle from "./../assets/circle.png";
 import Image from "next/image";
 import { ChoreContainer, Number, ChoreText, ImageContainer } from "../styles/Chore.styles";
+import { memo } from "react";
 
 const Chore = (props: IChoreProps) => {
   const { chore, handleDelete, handleCompleted } = props;
@@ -40,4 +41,4 @@ const Chore = (props: IChoreProps) => {
   );
 };
 
-export default Chore;
+export default memo(Chore);
