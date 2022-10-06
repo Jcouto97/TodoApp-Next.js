@@ -6,7 +6,7 @@ Simple todo app built to use and experiment with React's Next.js framework, coul
 
 ---
 
-_Feel free to deploy the project using the following workflow:_
+*Feel free to deploy the project using the following workflow:*
 
 ```
 $ git clone https://github.com/Jcouto97/TodoApp-Next.js.git
