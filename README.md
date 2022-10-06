@@ -2,7 +2,7 @@
 
 **SUMMARY:**
 
-Simple todo app built to use and experiment with React's Next.js framework, could be usefull for daily task organization. Feel free to clone the project with the command:
+Simple todo app built with the purpose of experimenting with React's Next.js framework, could be usefull for daily task organization. Feel free to clone the project with the command:
 
 ```
 $ git clone https://github.com/Jcouto97/TodoApp-Next.js.git
