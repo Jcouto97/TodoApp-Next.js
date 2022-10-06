@@ -10,6 +10,12 @@ export const Container = styled.div`
   justify-content: space-around;
   font-family: "Inria Serif", serif;
   border-bottom: #1fbba5 2px solid;
+
+  @media (max-width: 689px){
+    flex-wrap: wrap;
+    gap: 1%;
+    padding: 20px;
+    }
 `;
 
 export const Title = styled.h1`

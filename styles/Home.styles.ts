@@ -6,6 +6,12 @@ export const Container = styled.div`
   justify-content: center;
   gap: 5%;
   margin-right: 4%;
+
+  @media (max-width: 895px) {
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -20,6 +26,11 @@ export const TextContainer = styled.div`
 export const ImageContainer = styled.div`
   margin-bottom: 10%;
   border-bottom: 1px solid #21ab8c;
+
+  @media (max-width: 895px) {
+   width: 60%;
+   height: 60%;
+  }
 `;
 
 export const Title = styled.h1`

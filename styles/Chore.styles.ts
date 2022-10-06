@@ -12,6 +12,11 @@ export const ChoreContainer = styled.div`
   min-width: 500px;
   max-width: 500px;
   font-family: "Inria Serif", serif;
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
 `;
 
 export const Number = styled.li`
