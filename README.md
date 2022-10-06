@@ -11,7 +11,7 @@ Simple todo app built to use and experiment with React's Next.js framework, coul
 ```
 $ git clone https://github.com/Jcouto97/TodoApp-Next.js.git
 $ npm install
-$ cd todo
+$ cd TodoApp-Next.js
 $ npm run dev
 ```
 
